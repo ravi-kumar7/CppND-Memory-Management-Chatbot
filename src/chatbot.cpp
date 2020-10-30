@@ -51,7 +51,7 @@ ChatBot::ChatBot(const ChatBot &source)
     _rootNode = new GraphNode(source._rootNode->GetID());
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
-    if(source._image!=NULL)
+    if (source._image != NULL)
         _image = new wxBitmap(source._image->ConvertToImage());
 }
 
@@ -64,7 +64,7 @@ ChatBot &ChatBot::operator=(const ChatBot &source)
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
-    if(source._image!=NULL)
+    if (source._image != NULL)
         _image = new wxBitmap(source._image->ConvertToImage());
     return *this;
 }
@@ -76,7 +76,7 @@ ChatBot::ChatBot(ChatBot &&source)
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
-    if(source._image!=NULL)
+    if (source._image != NULL)
         _image = source._image;
     source._image = NULL;
     source._currentNode = nullptr;
@@ -93,7 +93,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
-    if(source._image!=NULL)
+    if (source._image != NULL)
         _image = source._image;
     source._image = NULL;
     source._currentNode = nullptr;
